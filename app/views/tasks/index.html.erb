@@ -1,0 +1,17 @@
+<h1>Tasks</h1>
+<ul>
+<%@tasks.each do |task| %>
+<div style="display: flex;">
+  <li><%=link_to "#{task.title}", task_path(task) %> <%=link_to task_path(task), method: :delete do %>
+  <i class="far fa-trash-alt" style="color: black; font-size: 18px;"></i>
+  <% end %>
+  </li>
+  
+</div>
+
+<%end%>
+</ul>
+
+<li><%=link_to "+ Add a new task", new_task_path%></li>
+
+
